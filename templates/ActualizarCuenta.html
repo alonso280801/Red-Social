@@ -1,0 +1,58 @@
+{% extends 'layout/inner.html' %}
+
+{% block title %}Actualizar Cuenta{% endblock %}
+
+{% block content %}
+{% for m in messages %}
+<div class="alert alert-success alert-dismissible fade show">
+  <strong>Alerta: </strong>{{m}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="cerrar"></button>
+</div>
+{% endfor %}
+<div class="actualizar">
+  <div class="actualizar__titulo">Actualizar cuenta</div>
+  <div class="formularios">
+    <form class="formulario" action="{% url 'ActualizarCuenta:nombre' %}" method="POST">
+      {% csrf_token %}
+      <div class="formulario__titulo">Nombre</div>
+      <input class="formulario__campo" type="text" name="nombre" placeholder="Ingresa el nuevo nombre">
+      <input class="formulario__campo" type="text" placeholder="Confirma el nuevo nombre">
+      <div class="botones">
+        <button class="formulario__btn btn-c" type="button">Cancelar</button>
+        <button class="formulario__btn btn-a" type="submit">Aceptar</button>
+      </div>
+    </form>
+    <form class="formulario" action="{% url 'ActualizarCuenta:contrasena' %}" method="POST">
+      {% csrf_token %}
+      <div class="formulario__titulo">Contraseña</div>
+      <input class="formulario__campo" type="password" name="contrasena" placeholder="Ingresa la nueva contraseña">
+      <input class="formulario__campo" type="password" placeholder="Confirma la nueva contraseña">
+      <div class="botones">
+        <button class="formulario__btn btn-c" type="button">Cancelar</button>
+        <button class="formulario__btn btn-a" type="submit">Aceptar</button>
+      </div>
+    </form>
+    <form class="formulario" action="{% url 'ActualizarCuenta:correo' %}" method="POST">
+      {% csrf_token %}
+      <div class="formulario__titulo">Correo</div>
+      <input class="formulario__campo" type="email" name="correo" placeholder="Ingresa el nuevo correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+      <input class="formulario__campo" type="email" placeholder="Confirma el nuevo correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+      <div class="botones">
+        <button class="formulario__btn btn-c" type="button">Cancelar</button>
+        <button class="formulario__btn btn-a" type="submit">Aceptar</button>
+      </div>
+    </form>
+    <form class="formulario" action="{% url 'ActualizarCuenta:super' %}" method="POST">
+      {% csrf_token %}
+      <div class="formulario__titulo">Super usuario</div>
+      <div class="form-check form-switch">
+        <input type="checkbox" name="superUsuario" value="True" class="form-check-input" id="switch">
+        <label for="switch" class="form-check-label">Presione</label>
+      </div>
+      <div class="botones">
+        <button class="formulario__btn btn-a" type="submit">Aceptar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

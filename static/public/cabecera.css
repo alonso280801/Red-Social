@@ -1,0 +1,190 @@
+.cabecera {
+  height: 57px;
+  background-image: linear-gradient(90deg, #F72585, #4361EE);
+}
+
+.cabecera__columna {
+  height: 57px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.cabecera__icono {
+  width: 43px;
+  height: 43px;
+  margin: 0 30px;
+  overflow: hidden;
+  & img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+}
+
+.buscar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 80%;
+}
+
+.buscar__menu {
+  height: 250px;
+  width: 60%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  top: 43px;
+  left: 19px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+.buscar__perfil {
+  width: 90%;
+  height: 43px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.buscar__perfil__foto {
+  background-color: black;
+  display: block;
+  width: 43px;
+  height: 43px;
+  border-radius: 50px;
+  overflow: hidden;
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.buscar__perfil__nombre {
+  color: white;
+  margin-left: 8px;
+  text-decoration: underline;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.buscar__contenedor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cabecera__busqueda {
+  width: 60%;
+  height: 43px;
+  margin-left: 20px;
+  padding-left: 64px;
+  background-color: #6F6F6F;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.bi-search {
+  position: absolute;
+  left: 40px;
+  font-size: 21px;
+  font-weight: lighter;
+  color: white;
+}
+
+.cabecera__btn {
+  width: 43px;
+  height: 43px;
+  margin-right: 20px;
+  border: solid 1px white;
+  border-radius: 5px;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & i {
+    font-size: 21px;
+  }
+  & a {
+    color: white;
+  }
+}
+
+.cabecera__btn:hover {
+  cursor: pointer;
+}
+
+.perfil {
+  width: 132px;
+  height: 43px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.perfil__foto {
+  background-color: black;
+  display: block;
+  width: 43px;
+  height: 43px;
+  border-radius: 50px;
+  overflow: hidden;
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.perfil__nombre {
+  color: white;
+  margin-left: 8px;
+  text-decoration: underline;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.opciones {
+  width: 223px;
+  height: 81px;
+  background-color: #6F6F6F;
+  position: absolute;
+  top: 57px;
+  left: 63px;
+  & a {
+    text-decoration: none;
+  }
+}
+
+.opciones__btn {
+  width: 204px;
+  height: 28px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-left: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.morado {
+  background-color: #7209B7;
+}
+
+.rosa {
+  background-color: #B5179E;
+}

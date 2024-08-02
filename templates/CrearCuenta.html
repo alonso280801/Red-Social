@@ -1,0 +1,45 @@
+{% extends 'layout/outter.html' %}
+{% load static %}
+
+{% block title %}Crear Cuenta{% endblock %}
+
+{% block content %}
+{% for m in messages %}
+<div class="alert alert-primary alert-dismissible fade show">
+  <strong>Error: </strong>{{m}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="cerrar"></button>
+</div>
+{% endfor %}
+<form id="form-registrar" action="{% url 'CrearCuenta:crear'%}" method="POST">
+  {% csrf_token %}
+  <p class="form__titulo">Registrarse</p>
+  <div class="fila">
+    <input class="form__campo" type="text" name="nombre" placeholder="Nombre" required>
+    <input class="form__campo" type="date" name="fecha" required>
+  </div>
+  <div class="fila">
+    <input class="form__campo" type="email" name="correo" placeholder="Correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+    <input class="form__campo" type="email" name="correo_c" placeholder="Confirme correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+  </div>
+  <div class="fila">
+    <div class="rad-btn">
+      <input type="radio" name="genero" value="mujer" id="mujer">
+      <label for="mujer">Mujer</label>
+    </div>
+    <div class="rad-btn">
+      <input type="radio" name="genero" value="hombre" id="hombre">
+      <label for="hombre">Hombre</label>
+    </div>
+    <div class="rad-btn">
+      <input type="radio" name="genero" value="otro" id="otro">
+      <label for="otro">No decir</label>
+    </div>
+  </div>
+  <div class="fila">
+    <input class="form__campo" type="password" name="contrasena" placeholder="Contraseña" required>
+    <input class="form__campo" type="password" name="contrasena_c" placeholder="Confirme contraseña" required>
+  </div>
+  <input class="form__btn ancho-50" type="submit" value="Crear">
+  <a class="form__link" href="{% url 'IniciarSesion:index' %}">Ya tengo cuenta</a>
+</form>
+{% endblock %}
