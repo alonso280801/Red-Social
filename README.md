@@ -1,5 +1,4 @@
 # GAIA
-Ingenieria de Software
 
 Para ejecutar este proyecto debes:
 
